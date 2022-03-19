@@ -1,0 +1,4 @@
+flask/
+.vscode
+_pycache_
+settings.json
