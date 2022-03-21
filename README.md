@@ -35,7 +35,7 @@ Once inside the flaskapp folder create a new virtual environment using the comma
 ```
 python -m venv flask
 ```
-Then activate the virtual environment,
+Then activate the virtual environment,  
 windows:
 ```
 .\flask\scripts\activate
@@ -50,4 +50,9 @@ pip install -r requirements.txt
 ```
 If the following command fails, cd to the folder that contains the requirements.txt and type the command in again.
 The setup for the app is now completed!
+
+## Helpful Resources
+[Neomodel Documentation](https://neomodel.readthedocs.io/en/latest/getting_started.html)  
+[Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)  
+[Flask Tutorial Video - Corey Schaefer](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
 
