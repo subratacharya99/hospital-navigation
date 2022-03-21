@@ -35,7 +35,7 @@ Once inside the flaskapp folder create a new virtual environment using the comma
 ```
 python -m venv flask
 ```
-Then activate the virtual environment:
+Then activate the virtual environment,
 windows:
 ```
 .\flask\scripts\activate
