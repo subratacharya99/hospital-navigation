@@ -54,5 +54,5 @@ The setup for the app is now completed!
 ## Helpful Resources
 [Neomodel Documentation](https://neomodel.readthedocs.io/en/latest/getting_started.html)  
 [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)  
-[Flask Tutorial Video - Corey Schaefer](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
+[Flask Tutorial Playlist - Corey Schaefer](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
 
