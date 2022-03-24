@@ -6,20 +6,13 @@ This app was developed to navigate people around the University of Iowa Hospital
 ### Basic Requirements
 First download Python if you do not have it already. In order to check if you already have it, in the terminal(Mac) or command prompt(windows) type the following:
 ```
-python
+python --version
 ```
 or
 ```
-python3
+python3 --verson
 ```
-This opens the python terminal. If you are greeted by the following, then python is installed.
-```
-Python 3.9.7 (default, Sep 16 2021, 08:50:36) 
-[some other text]
-[even more text maybe]
->>> 
-```
-Ensure you have a version of Python that is atleast 3.9 or newer. .To exit out of the Python terminal, type _quit()_ and hit enter. Then navigate to a directory where you can store the files for the app using the _cd_ command. Once in the directory, clone this git project using the HTTPS url found in green **code** button on the repository page.
+Ensure you have a version of Python that is atleast 3.8 or newer. Then navigate to a directory where you can store the files for the app using the _cd_ command. Once in the directory, clone this git project using the HTTPS url found in green **code** button on the repository page.
 ```
 git clone <url>
 ```
@@ -27,7 +20,7 @@ After you have cloned the repository, navigate inside it using
 ```
 cd flaskapp
 ```
-Then if you haven't already, download the python package using the command:
+Now we set up the virtual environement. If you don't have it alrady download the virtual environment python package using the command:
 ```
 pip install virtualenv
 ```
@@ -55,4 +48,5 @@ The setup for the app is now completed!
 [Neomodel Documentation](https://neomodel.readthedocs.io/en/latest/getting_started.html)  
 [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)  
 [Flask Tutorial Playlist - Corey Schaefer](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
+[WTForms for Flask](https://wtforms.readthedocs.io/en/2.3.x/)
 
