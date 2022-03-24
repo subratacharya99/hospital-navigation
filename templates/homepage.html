@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+            <div class="container-fluid">
+                <form class="row row-cols-lg-auto g-3 align-items-center mt-3">
+                    <h4>
+                        Please enter your current location. Include both the building name and floor number.
+                    </h4>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                <option selected>Main Hospital</option>
+                                <option value="1">Children's Hospital</option>
+                                <option value="2">Oncology Department</option>
+                                <option value="3">Emergency Room</option>
+                            </select>
+                        </div>
+                        <div class="col-6">                     
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                 <option selected>Floor 1</option>
+                                 <option value="1">Floor 2</option>
+                                 <option value="2">Floor 3</option>                          
+                                 <option value="3">Floor 4</option>
+                             </select>
+                          </div>
+                        </div>
+                     <h4>
+                        Please enter your desired location. Include both the building name and floor number.
+                    </h4>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                <option selected>Main Hospital</option>
+                                <option value="1">Children's Hospital</option>
+                                <option value="2">Oncology Department</option>
+                                <option value="3">Emergency Room</option>
+                            </select>
+                        </div>
+                        <div class="col-6">                     
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                 <option selected>Floor 1</option>
+                                 <option value="1">Floor 2</option>
+                                 <option value="2">Floor 3</option>                          
+                                 <option value="3">Floor 4</option>
+                             </select>
+                        </div>
+                    </div>
+                    <h4>
+                        Is this area restricted?
+                    </h4>
+                    <div class="form-row">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+                <div class="col-12 justify-content-center d-flex mr-0 ml-0">
+                    <a href='results.html' class="btn btn-yellow">
+                        Submit
+                    </a>
+                </div>  
+            </div>
+{% endblock content%}

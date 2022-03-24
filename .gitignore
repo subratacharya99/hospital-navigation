@@ -1,4 +1,6 @@
 flask/
 .vscode
-_pycache_
+__pycache__
 settings.json
+.DS_Store
+templates/Images/
