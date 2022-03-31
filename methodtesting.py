@@ -7,25 +7,32 @@ from neo4j.graph import Relationship as Relationship
 
 class Test:
     
+    #Initializes connection to database with authentication
     def __init__(self, uri, user, password):
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
         print("Connected To Database")
 
+    #Closes connection to database
+    #If a new instance of class test is called, this method should be envoked at the end to ensure the session is closed.
     def close(self):
         self.driver.close()
         print("Disconnected")
     
+    #Creates an elevator on a floor
     #This function works, but does not check for duplicates
     def createElevator(self, elevatorName, floor):
         with self.driver.session() as session:
             query = (
                 f"MERGE (e: Elevator {{ name: '{elevatorName}' }})"
-                f"SET e.floor = 1"
-                #"RETURN e"
+                f"SET e.floor = {floor}"
+                "RETURN e.name as name"
+                "RETURN e.floor as floor"
             )
-            session.run(query)
-            print(f"Elevator {elevatorName} on floor {floor} has been added!")
+            results = session.run(query)
+            for r in results:
+                print(f"Elevator {r['name']} on floor {r['floor']} has been added!")
 
+    #sets relationship between two elevators
     def setElevatorElevatorRelationship(self, firstElevator, secondElevator, relationship, floor):
         with self.driver.session() as session:
             query = (
@@ -37,13 +44,20 @@ class Test:
             result= session.run(query)
             for r in result:
                 print (r['name'])
-    
 
-#relationships
+    #sets elevator relationship to the location
+    def setElevatorLocationRelationship(self, elevator, location, direction_ltoe, floor):
+        return
+    #gets the relationship to the closest elevator (only works if location is directly connected to the elevator atm)
+    def getLocationToNearestElevator(self, location, floor):
+        return
+        
+
+#testing app
+if __name__ == '__main__':
+
+    testing = Test("neo4j+s://2e126d37.databases.neo4j.io", "neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A")
+    testing.setElevatorElevatorRelationship("B", "C", "ns", 1)
 
 
-testing = Test("neo4j+s://2e126d37.databases.neo4j.io", "neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A")
-testing.setElevatorElevatorRelationship("B", "C", "ns", 1)
-
-#testing.setElevatorElevatorRelationship("A", "B", "ns", 1)
-testing.close()
+    testing.close()
