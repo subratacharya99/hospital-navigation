@@ -23,5 +23,5 @@ class LocationForm(FlaskForm):
     building = StringField('Building', validators = [Length(min=2, max=20)])
     submit = SubmitField('Confirm')
     
-class NavigationForm(FlaskForm):
-    startlocation = se
+# class NavigationForm(FlaskForm):
+#     startlocation = se
