@@ -36,12 +36,54 @@ def navigate():
         startpoint = req['startpoint']
         endpoint = req['endpoint']
         driver = GraphDatabase.driver("neo4j+s://2e126d37.databases.neo4j.io", auth=("neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A"))
-        with driver.session() as session:
-            query = {
-            }
+        session = driver.session()
+        startelevator, directiontoelevator = getDirectionToNearestElevator(session, startpoint)
+        endelevator, directionfromelevator = getDirectionFromNearestElevator(session, endpoint)
+        firststep = f"From {startpoint}, head {directiontoelevator} towards Elevator {startelevator}"
+        if startelevator < endelevator:
+            secondstep = f"Once at Elevator {startelevator}, follow signs and head south towards Elevator {endelevator}"
+        else:
+            secondstep = f"Once at Elevator {startelevator}, follow signs and head north towards Elevator {endelevator}"
+        thirdstep = f"After arriving at Elevator {endelevator} head {directionfromelevator} towards {endpoint}"
+        finalstep = f"You have now arrived at {endpoint}"
+        steps = [firststep, secondstep, thirdstep, finalstep]
+        print(steps)
         return redirect(url_for('home'))
     return render_template('navigate.html', title = 'Navigate', form = form)
 
+
+#static methods
+def getDirectionToNearestElevator(session, location):
+        with session:
+            query = (
+                f"MATCH (: Location {{name: '{location}'}})-[r:CONNECTS]-(e: Elevator)"
+                "RETURN r.name as name, e.name as ename"
+               
+            )
+            result = session.run(query)
+            for r in result:
+                #print(f"The direction from {location} to Elevator {r['ename']} is {r['name']}")
+                closeste = r['ename']
+                directiontoe = r['name']
+            return closeste, directiontoe
+
+def getDirectionFromNearestElevator(session, location):
+        with session:
+            query = (
+                f"MATCH (: Location {{name: '{location}'}})-[r:CONNECTS]-(e: Elevator)"
+                "RETURN r.name as name, e.name as ename"
+               
+            )
+            result = session.run(query)
+            # if statement to return opposite
+            
+            for r in result:
+                if r['name'] == "west":
+                    r1 = "east"
+                else:
+                    r1 = "west"
+            closeste = r['ename']
+            return closeste, r1
 if __name__ == '__main__':
     # create_an_item()
     app.run(debug=True)
