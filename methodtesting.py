@@ -63,13 +63,12 @@ class Test:
             result = session.run(query)
             for r in result:
                 locations.append(r['name'])
-            print(locations)
+            return locations
 
 #testing app
 if __name__ == '__main__':
 
     testing = Test("neo4j+s://2e126d37.databases.neo4j.io", "neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A")
     #testing.setElevatorElevatorRelationship("B", "C", "ns", 1)
-    testing.return_location_list()
 
     testing.close()

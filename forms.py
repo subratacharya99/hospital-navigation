@@ -9,11 +9,12 @@ def return_location_list():
     locations = []
     with driver.session() as session:
         query = ("MATCH (l: Location)"
-                 "RETURN l.name as name"
-        )
+                    "RETURN l.name as name"
+            )
         result = session.run(query)
         for r in result:
             locations.append(r['name'])
+        return locations
 
 
     driver.close()
@@ -23,5 +24,7 @@ class LocationForm(FlaskForm):
     building = StringField('Building', validators = [Length(min=2, max=20)])
     submit = SubmitField('Confirm')
     
-# class NavigationForm(FlaskForm):
-#     startlocation = se
+class NavigationForm(FlaskForm):
+    startpoint = SelectField("Where are you?", choices = return_location_list())
+    endpoint = SelectField("Where are you going?", choices= return_location_list())
+    submit = SubmitField('Navigate')
