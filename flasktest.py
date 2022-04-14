@@ -16,6 +16,7 @@ uri = '2e126d37.databases.neo4j.io'
 def home():
     return render_template('home.html')
 
+
 @app.route("/add_location", methods=['GET', 'POST'])
 def add_location():
     form = LocationForm()
@@ -27,11 +28,11 @@ def add_location():
 
     return render_template('add_location.html', title = 'Add a Location', form = form)
 
+
 @app.route("/navigate", methods=["GET", "POST"])
 def navigate():
     form = NavigationForm()
     if form.validate_on_submit():
-       # flash('Request created successfully', 'success')
         req = request.form
         startpoint = req['startpoint']
         endpoint = req['endpoint']
@@ -47,8 +48,8 @@ def navigate():
         thirdstep = f"After arriving at Elevator {endelevator} head {directionfromelevator} towards {endpoint}"
         finalstep = f"You have now arrived at {endpoint}"
         steps = [firststep, secondstep, thirdstep, finalstep]
-        print(steps)
-        return redirect(url_for('home'))
+        
+        return render_template('results.html', directions = steps, start = startpoint, end = endpoint)
     return render_template('navigate.html', title = 'Navigate', form = form)
 
 
