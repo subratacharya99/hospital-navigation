@@ -5,13 +5,13 @@
     <div class="container ml-3">
         <div class="row row-cols-lg-auto g-3 align-items-center mt-3">
             <h3>Directions From {{ start }} to {{ end }}</h3>
-            <ul>
+            <ol>
                 {% for d in directions %}
-                <li class="mt-2">
+                <li class="ml-3">
                     {{d}}
                 </li>
                 {% endfor %}
-            </ul>
+            </ol>
             </div>
     </div>
 </div>
