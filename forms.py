@@ -12,9 +12,9 @@ def return_location_list():
                     "RETURN l.name as name"
             )
         result = session.run(query)
-        driver.close()
         for r in result:
             locations.append(r['name'])
+        driver.close()
         return locations
     
 class LocationForm(FlaskForm):
