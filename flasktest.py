@@ -1,4 +1,4 @@
-from flask import Flask, message_flashed, render_template, url_for, flash, redirect, request
+from flask import Flask, render_template, request
 from forms import LocationForm, NavigationForm
 from neo4j import GraphDatabase
 
@@ -59,7 +59,7 @@ def navigate():
         finalstep = f"You have now arrived at {endpoint}"
         steps = [firststep, secondstep, thirdstep, finalstep]
         
-        return render_template('results.html', directions = steps, start = startpoint, end = endpoint, title = "Directions")
+        return render_template('newtemplates/results.html', directions = steps, start = startpoint, end = endpoint, title = "Directions")
     return render_template('newtemplates/navigate.html', title = 'Navigate', form = form)
 
 @app.route("/settings")
