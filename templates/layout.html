@@ -75,43 +75,49 @@
     </head>
     <body>
         <div class = "wrapper">
-            <header>
+            <header class="mb-auto">
                 <h1> 
                     UIHC Navigation
                 </h1>
                 <nav class= 'd-flex justify-content-left'>
                     <ul class="ml-0">
                         <li class="mr-0">
-                            <a href="" class="current btn btn-yellow">
-                            Home
-                        </a>
-                    </li>
+                            <a href="{{ url_for('home') }}" class="btn btn-yellow">
+                                Home
+                            </a>
+                        </li>
                         <li class="mr-0 ml-0">
-                            <a class="btn btn-yellow" href="homepage.html">
-                            Directions
-                        </a>
-                    </li>
+                            <a class="btn btn-yellow" href="{{ url_for('navigate') }}">
+                                Directions
+                            </a>
+                        </li>
                         <li class="mr-0 ml-0">
                             <a class="btn btn-yellow" href="closures.html">
-                            Closures
-                        </a>
-                    </li>
+                                Closures
+                            </a>
+                        </li>
                         <li class="mr-0 ml-0">
-                            <a class="btn btn-yellow" href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-                </li>
-                <li class="mr-0 ml-0">
-                    <a class="btn btn-yellow" href="settings.html">
-                    Settings
-                    </a>
-                </li>
+                            <a class="btn btn-yellow" href="{{ url_for('contact') }}">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="mr-0 ml-0">
+                            <a class="btn btn-yellow" href="settings.html">
+                                Settings
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </header>
-
-
+            {% with messages = get_flashed_messages(with_categories=true)  %}
+                {% if messages %}
+                    {%for category, message in messages %}
+                        <div class="alert alert-{{ category }} mt-6">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             {% block content %}
             {% endblock content %}
 

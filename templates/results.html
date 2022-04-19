@@ -2,26 +2,16 @@
 
 {% block content %}
 <div class="aligned">
-    <img src="{{url_for('static', filename='Results.jpg')}}" class="img-fluid" alt="map of the hospital with directions" width="450" height="200">
-    <div class="container-fluid">
+    <div class="container ml-3">
         <div class="row row-cols-lg-auto g-3 align-items-center mt-3">
-            <p><em><b>Directions to the Emergency room</b></em>
-            </p>
-            <ul>
-                <li>
-                    Take elevator I to the first floor of the Papajohn Pavililon 
+            <h3>Directions From {{ start }} to {{ end }}</h3>
+            <ol>
+                {% for d in directions %}
+                <li class="ml-3">
+                    {{d}}
                 </li>
-                <li> Turn right from the elavator and walk straight </li>
-                <li>
-                    Go pass elavator H and pass the plastics and reconstruction clinic 
-                </li>
-                <li>
-                    Walk stright until you reach elevator E
-                </li>
-                <li>Then you will see the Breadground Cafe on your left </li>
-
-                <li>After the cafe the Emergency Room is on your right</li>
-            </ul>
+                {% endfor %}
+            </ol>
             </div>
     </div>
 </div>

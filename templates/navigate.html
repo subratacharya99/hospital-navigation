@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="content-section ml-4">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mt-5 mb-4">Navigate</legend>
+                <div class="form-group col-6">
+                    {{ form.startpoint.label(class="form-control-label") }}
+                    {{ form.startpoint(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group col-6">
+                    {{ form.endpoint.label(class="form-control-label") }}
+                    {{ form.endpoint(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group col-6">
+                {{ form.submit(class="btn btn-success") }}
+            </div>
+        </form>
+
+
+{% endblock content %}

@@ -1,6 +1,8 @@
 from neo4j import GraphDatabase
 from neo4j.graph import Relationship as Relationship
 
+#from forms import return_location_list
+
 
 # There will be two node types in this graph database: An "elevator" type and a "location" type
 # Node of type elevator will have 
@@ -52,12 +54,21 @@ class Test:
     def getLocationToNearestElevator(self, location, floor):
         return
         
+    def return_location_list(self):
+        locations = []
+        with self.driver.session() as session:
+            query = ("MATCH (l: Location)"
+                    "RETURN l.name as name"
+            )
+            result = session.run(query)
+            for r in result:
+                locations.append(r['name'])
+            return locations
 
 #testing app
 if __name__ == '__main__':
 
     testing = Test("neo4j+s://2e126d37.databases.neo4j.io", "neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A")
-    testing.setElevatorElevatorRelationship("B", "C", "ns", 1)
-
+    #testing.setElevatorElevatorRelationship("B", "C", "ns", 1)
 
     testing.close()
