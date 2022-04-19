@@ -14,8 +14,11 @@ uri = '2e126d37.databases.neo4j.io'
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template('newtemplates/home.html')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('newtemplates/404.html'), 404
 
 @app.route("/add_location", methods=['GET', 'POST'])
 def add_location():
@@ -30,7 +33,7 @@ def add_location():
 
 @app.route("/contact", methods=["GET"])
 def contact():
-    return render_template('contact.html', title="Contact")
+    return render_template('newtemplates/contact.html', title="Contact")
 
 
 @app.route("/navigate", methods=["GET", "POST"])
@@ -40,8 +43,8 @@ def navigate():
         req = request.form
         startpoint = req['startpoint']
         endpoint = req['endpoint']
-        if startpoint == "Select a Location" or endpoint == "Select a Location" or startpoint == endpoint:
-            return render_template('navigate.html', title = "Navigate", form=form)
+        if startpoint == "Where are you?" or endpoint == "Where are you going?" or startpoint == endpoint:
+            return render_template('newtemplates/navigate.html', title = "Navigate", form=form)
         driver = GraphDatabase.driver("neo4j+s://2e126d37.databases.neo4j.io", auth=("neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A"))
         session = driver.session()
         startelevator, directiontoelevator = getDirectionToNearestElevator(session, startpoint)
@@ -57,9 +60,20 @@ def navigate():
         steps = [firststep, secondstep, thirdstep, finalstep]
         
         return render_template('results.html', directions = steps, start = startpoint, end = endpoint, title = "Directions")
-    return render_template('navigate.html', title = 'Navigate', form = form)
+    return render_template('newtemplates/navigate.html', title = 'Navigate', form = form)
 
+@app.route("/settings")
+def settings():
+    return render_template('newtemplates/settings.html')
 
+@app.route("/closures")
+def closures():
+    return render_template('newtemplates/closures.html')
+
+@app.route("/team")
+def team():
+    return render_template('newtemplates/team.html')
+    
 #static methods
 def getDirectionToNearestElevator(session, location):
         with session:
