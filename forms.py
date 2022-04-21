@@ -3,7 +3,11 @@ from wtforms import StringField, IntegerField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length
 from neo4j import GraphDatabase
 from neo4j.graph import Relationship as Relationship
-from flasktest import uri, user, pw
+
+
+user = 'neo4j'
+pw = 'fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A'
+uri = "neo4j+s://2e126d37.databases.neo4j.io"
 
 
 def return_location_list():
