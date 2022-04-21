@@ -2,12 +2,15 @@
 
 {% block content %}
 
-<section class="hero-home dark-overlay mb-5"><img class="bg-image" src="{{url_for('static', filename='img/photo/HomePage.jpg')}}" alt="">
+<section class="hero-home dark-overlay"><img class="bg-image" src="{{url_for('static', filename='img/photo/HomePage.jpg')}}" alt="">
   <div class="container py-7">
     <div class="overlay-content text-center text-white">
       <h1 class="display-3 text-serif fw-bold text-shadow mb-0">Welcome!</h1>
     </div>
   </div>
 </section>
+<div class="col-3 d-flex alight-items-start">
+  <cite style="font-size: x-small;">Image obtained from the University of Iowa Center for Advancement</cite>
+</div>
 
 {%endblock content%}
