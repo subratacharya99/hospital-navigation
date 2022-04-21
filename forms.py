@@ -3,9 +3,11 @@ from wtforms import StringField, IntegerField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length
 from neo4j import GraphDatabase
 from neo4j.graph import Relationship as Relationship
+from flasktest import uri, user, pw
+
 
 def return_location_list():
-    driver = GraphDatabase.driver("neo4j+s://2e126d37.databases.neo4j.io", auth=("neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A"))
+    driver = GraphDatabase.driver(uri, auth=(user, pw))
     locations = ["Select a Location"]
     with driver.session() as session:
         query = ("MATCH (l: Location)"
@@ -18,7 +20,7 @@ def return_location_list():
         return locations
     
 def startpoint():
-    driver = GraphDatabase.driver("neo4j+s://2e126d37.databases.neo4j.io", auth=("neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A"))
+    driver = GraphDatabase.driver(uri, auth=(user, pw))
     locations = ["Where are you?"]
     with driver.session() as session:
         query = ("MATCH (l: Location)"
@@ -31,7 +33,7 @@ def startpoint():
         return locations
 
 def endpoint():
-    driver = GraphDatabase.driver("neo4j+s://2e126d37.databases.neo4j.io", auth=("neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A"))
+    driver = GraphDatabase.driver(uri, auth=(user, pw))
     locations = ["Where are you going?"]
     with driver.session() as session:
         query = ("MATCH (l: Location)"
