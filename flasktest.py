@@ -8,7 +8,7 @@ app.config['SECRET_KEY'] = '8c77bf14abe1c038b49ffb7087067fbe'
 #If we make git public, then these should be changed to environment variables
 user = 'neo4j'
 pw = 'fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A'
-uri = '2e126d37.databases.neo4j.io'
+uri = "neo4j+s://2e126d37.databases.neo4j.io"
 
 
 
@@ -45,7 +45,7 @@ def navigate():
         endpoint = req['endpoint']
         if startpoint == "Where are you?" or endpoint == "Where are you going?" or startpoint == endpoint:
             return render_template('newtemplates/navigate.html', title = "Navigate", form=form)
-        driver = GraphDatabase.driver("neo4j+s://2e126d37.databases.neo4j.io", auth=("neo4j", "fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A"))
+        driver = GraphDatabase.driver(uri, auth=(user, pw))
         session = driver.session()
         startelevator, directiontoelevator = getDirectionToNearestElevator(session, startpoint)
         endelevator, directionfromelevator = getDirectionFromNearestElevator(session, endpoint)
