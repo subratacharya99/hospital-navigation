@@ -12,7 +12,7 @@ uri = "neo4j+s://2e126d37.databases.neo4j.io"
 
 
 
-@app.route("/")
+@app.route("/about")
 def home():
     return render_template('newtemplates/home.html')
 
@@ -36,7 +36,7 @@ def contact():
     return render_template('newtemplates/contact.html', title="Contact")
 
 
-@app.route("/navigate", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def navigate():
     form = NavigationForm()
     if form.validate_on_submit():
