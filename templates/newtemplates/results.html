@@ -1,0 +1,32 @@
+{%extends 'newtemplates/layout.html'%}
+{%block content%}
+    <!-- Hero Section-->
+    <section class="hero py-6 py-lg-7 text-white dark-overlay"><img class="bg-image" src="{{url_for('static', filename='img/photo/HomePage.jpg')}}" alt="Text page">
+      <div class="container overlay-content">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb text-white justify-content-center no-border mb-0">
+          <li class="breadcrumb-item active"><a href="{{url_for('home')}}">Home</a></li>
+          <li class="breadcrumb-item active"><a href="{{url_for('contact')}}">Contact</a></li>
+        </ol>
+        <h1 class="display-2 text-serif fw-bold text-shadow mb-0">Directions</h1>
+      </div>
+    </section>
+    <section class="py-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-lg-10 mx-auto">           
+            <h3 class="mb-5">Directions From {{ start }} to {{ end }}</h3>
+            <ol>
+                {% for d in directions %}
+                <div class="row mb-5">
+                  <li class="ml-3">
+                    {{d}}
+                </li>
+                </div>
+                {% endfor %}
+            </ol>
+          </div>
+        </div> 
+      </div>
+    </section>
+{%endblock content%}

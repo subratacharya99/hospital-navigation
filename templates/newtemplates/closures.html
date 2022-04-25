@@ -1,0 +1,47 @@
+{%extends 'newtemplates/layout.html'%}
+{%block content%}
+    <!-- Hero Section-->
+    <section class="py-6 bg-gray-100">
+      <div class="container">
+        <h2 class="h2 mb-4">Report a Closure</h2>
+        <div class="row">
+          <div class="col-md-7 mb-5 mb-md-0">
+            <form class="form" id="contact-form" method="post" action="contact.php">
+              <div class="controls">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <label class="form-label" for="name">Your first name *</label>
+                      <input class="form-control" type="text" name="name" id="name" placeholder="Enter your first name" required="required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <label class="form-label" for="surname">Your last name *</label>
+                      <input class="form-control" type="text" name="surname" id="surname" placeholder="Enter your last name" required="required">
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="email">Your Email *</label>
+                  <input class="form-control" type="text" name="message" id="message" placeholder="Enter your email" required="required">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="message">Closure Information</label>
+                  <textarea class="form-control" rows="3" name="message" id="message" placeholder="Please enter the location of the closure in the following format: hallway, nearest elevators, floor, building, reason(if known)." required="required"></textarea>
+                </div>
+                <button class="btn btn-outline-primary" type="submit">Submit closure</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5">
+            <div class="ps-lg-4 text-sm">
+              <p class="text-muted">We understand the hospital is constantly changing! To help our team keep your directions as up to date as possible, we ask that you enter any closures found on the hospital campus.</p>
+              <p class="text-muted">Our team asks that you only submit long-term closures due to construction or COVID-19. Our team will need to verify the details of each closure, so please allow some time before directions are accurately updated to avoid a closure. We thank you in advance for your patience!</p>
+              <p class="text-muted">Note: This page is for demostration purposes and is not functional at this time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{%endblock content%}

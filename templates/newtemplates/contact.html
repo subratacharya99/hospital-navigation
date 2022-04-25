@@ -1,0 +1,95 @@
+{%extends 'newtemplates/layout.html'%}
+{%block content%}
+    <!-- Hero Section-->
+    <section class="hero py-6 py-lg-7 text-white dark-overlay"><img class="bg-image" src="static/Blue_contact.png" alt="How can we help you today?">
+      <div class="container overlay-content">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb text-white justify-content-center no-border mb-0">
+          <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
+          <li class="breadcrumb-item active">Contact                         </li>
+        </ol>
+        <h1 class="hero-heading">How can we help you today?</h1>
+      </div>
+    </section>
+    <section class="py-6">
+      <div class="container">       
+        <div class="row">
+          <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+            <div class="icon-rounded mb-4 bg-primary-light">
+              <svg class="svg-icon w-2rem h-2rem text-primary">
+                <use xlink:href="#map-location-1"> </use>
+              </svg>
+            </div>
+            <h3 class="h5">Address</h3>
+            <p class="text-muted">200 Hawkins Drive<br>Iowa City IA 52242<br><strong> United States</strong></p>
+          </div>
+          <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+            <div class="icon-rounded mb-4 bg-primary-light">
+              <svg class="svg-icon w-2rem h-2rem text-primary">
+                <use xlink:href="#landline-1"> </use>
+              </svg>
+            </div>
+            <h3 class="h5">Call center</h3>
+            <p class="text-muted">University of Iowa Main Hospital: (319) 356-1616 </p>
+            <p class="text-muted">University of Iowa Hospitals and Clinics Information Desk: (319) 384-8591</p>
+            <p class="text-muted"><strong> Toll Free: 1-800-777-8442</strong></p>
+          </div>
+          <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+            <div class="icon-rounded mb-4 bg-primary-light">
+              <svg class="svg-icon w-2rem h-2rem text-primary">
+                <use xlink:href="#mail-1"> </use>
+              </svg>
+            </div>
+            <h3 class="h5">Electronic support</h3>
+            <ul class="list-unstyled text-muted">
+              <li> patient-experience@uiowa.edu</li>
+              <li> complaint@jointcommission.org</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-6 bg-gray-100">
+      <div class="container">
+        <h2 class="h4 mb-5">Contact form</h2>
+        <div class="row">
+          <div class="col-md-7 mb-5 mb-md-0">
+            <form class="form" id="contact-form" method="post" action="contact.php">
+              <div class="controls">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <label class="form-label" for="name">Your first name *</label>
+                      <input class="form-control" type="text" name="name" id="name" placeholder="Enter your first name" required="required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-4">
+                      <label class="form-label" for="surname">Your last name *</label>
+                      <input class="form-control" type="text" name="surname" id="surname" placeholder="Enter your last name" required="required">
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="email">Your email *</label>
+                  <input class="form-control" type="email" name="email" id="email" placeholder="Enter your email" required="required">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="message">Your message for us *</label>
+                  <textarea class="form-control" rows="4" name="message" id="message" placeholder="Enter your message" required="required"></textarea>
+                </div>
+              </div>
+            </form>
+            <button class="btn btn-outline-primary" disabled type="submit">Send message</button>
+          </div>
+          <div class="col-md-5">
+            <div class="ps-lg-4 text-sm">
+              <p class="text-muted">We understand that our app isn't perfect and we would greatly appreciate your feedback. If you encounter any bugs or would like a feature implemented, let us know, and we will address your concerns.</p>
+              <p class="text-muted">Note: Please be aware that this form is purely for demonstration purposes and not functional. If you are lost and need help, please use the contact above.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+   {%endblock content%}

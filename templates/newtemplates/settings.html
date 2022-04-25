@@ -1,0 +1,13 @@
+{%extends 'newtemplates/layout.html'%}
+
+{%block content%}
+    <div class="mh-full-screen d-flex align-items-center dark-overlay"><img class="bg-image" src="{{url_for('static', filename='img/photo/pentacrest.jpeg')}}" alt="Coming Soon">
+      <div class="container text-white text-center text-lg overlay-content py-6 py-lg-0">
+        <h1 class="sr-only">Coming soon</h1><img class="img-fluid mx-auto mb-6" src="{{url_for('static', filename='img/coming-soon.png')}}" alt="Coming Soon">
+        <h3 class="mb-5 text-shadow">Settings page is coming soon!</h3>
+        <p class="fw-light mb-4"><i class="fas fa-map-marker-alt me-2"></i> 200 Hawkins Drive Iowa City, IA 52242</p>
+        <p class="fw-light mb-4"><i class="fas fa-solid fa-phone"></i> 1-800-777-8442</p>
+      </div>
+    </div>
+    <cite style="font-size: x-small;">Image obtained from Wikimedia Commons</cite>
+{%endblock content%}
