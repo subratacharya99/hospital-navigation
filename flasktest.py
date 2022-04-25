@@ -107,6 +107,3 @@ def getDirectionFromNearestElevator(session, location):
             closeste = r['ename']
             return closeste, r1
 
-if __name__ == '__main__':
-    # create_an_item()
-    app.run(debug=True)
