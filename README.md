@@ -8,7 +8,7 @@ Ensure you have a version of Python that is atleast 3.8 or newer. Then navigate 
 ```
 git clone <url>
 ```
-After you have cloned the repository, navigate inside the flaskapp folder. Set up the virtual environement. Once inside the flaskapp folder create a new virtual environment then activate the virtual environment. Once inside the virtual environment, install all packages needed for this app by using the command:
+After you have cloned the repository, navigate inside the flaskapp folder. Set up the virtual environement. Once inside the hospital-navigation folder create a new virtual environment then activate the virtual environment. Once inside the virtual environment, install all packages needed for this app by using the command:
 ```
 pip install -r requirements.txt
 ```
