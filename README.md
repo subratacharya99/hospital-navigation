@@ -12,7 +12,7 @@ After you have cloned the repository, navigate inside the flaskapp folder. Set u
 ```
 pip install -r requirements.txt
 ```
-If the following command fails, cd to the folder that contains the requirements.txt and type the command in again. After all the requirements are set up, set up environmental variables for the neo4j database that the app will communicate with: USER = <username>, PASSWORD = <password>, URI = <database uri>.
+If the following command fails, cd to the folder that contains the requirements.txt and type the command in again. After all the requirements are set up, set up environmental variables for the neo4j database that the app will communicate with: USER = username, PASSWORD = password, URI = database uri.
 The setup for the app is now completed!
   
 ## Database Setup
