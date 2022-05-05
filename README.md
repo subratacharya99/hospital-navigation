@@ -31,6 +31,6 @@ Thank you for taking the time to read this. I hope you are able to use this as a
 
 ## Helpful Resources
 [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)  
-[WTForms for Flask](https://wtforms.readthedocs.io/en/2.3.x/)
+[WTForms for Flask](https://wtforms.readthedocs.io/en/2.3.x/)  
 [Cypher Query Language Documentation](https://neo4j.com/developer/cypher/)
   
