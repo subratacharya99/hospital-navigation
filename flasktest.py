@@ -1,14 +1,15 @@
 from flask import Flask, render_template, request
 from forms import LocationForm, NavigationForm
 from neo4j import GraphDatabase
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8c77bf14abe1c038b49ffb7087067fbe'
 
 #If we make git public, then these should be changed to environment variables
-user = 'neo4j'
-pw = 'fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A'
-uri = "neo4j+s://2e126d37.databases.neo4j.io"
+user = os.environ['USER']
+pw = os.environ['PASSWORD']
+uri = os.environ['URI']
 
 
 
