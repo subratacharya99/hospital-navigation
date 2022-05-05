@@ -4,7 +4,6 @@ from neo4j import GraphDatabase
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8c77bf14abe1c038b49ffb7087067fbe'
 
 #If we make git public, then these should be changed to environment variables
 user = os.environ['USER']
