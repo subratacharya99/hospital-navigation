@@ -3,11 +3,12 @@ from wtforms import StringField, IntegerField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length
 from neo4j import GraphDatabase
 from neo4j.graph import Relationship as Relationship
+import os
 
 
-user = 'neo4j'
-pw = 'fMMMCrLRM3buP_V1EfNj3AVMhuqKRHmdJHvjPp2C51A'
-uri = "neo4j+s://2e126d37.databases.neo4j.io"
+user = os.environ['USER']
+pw = os.environ['PASSWORD']
+uri = os.environ['URI']
 
 
 def return_location_list():
