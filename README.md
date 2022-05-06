@@ -27,7 +27,8 @@ There are still plenty of improvements that can be made to this application. Ple
 3. Better directions stored in the database
 4. Visual directions
   
-Thank you for taking the time to read this. I hope you are able to use this as a foundation for a truly great solution to navigating the UIHC.
+Thank you for taking the time to read this. I hope you are able to use this as a foundation for a truly great solution to navigating the UIHC.  
+Side note: The main app file for this project is flasktest.py
 
 ## Helpful Resources
 [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)  
